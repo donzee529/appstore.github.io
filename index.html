@@ -1,63 +1,76 @@
 <!DOCTYPE html>
 <html lang="iw" dir="rtl">
-<html>
+  <html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    </head>
 
-<head>
+    <body style="text-align: center; margin: 0 auto; font-family: 'Roboto', sans-serif; background-color: #f9f9f9">
+      <h1 style="color: #000000; font-size: 1.5rem; font-weight: 700; margin: 1.5rem">App Store</h1>
+      <ul
+        id="app-container"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem; list-style: none; padding: 0"
+      >
+        <script>
+          const apps = [
+            {
+              name: "WhatsApp Business",
+              image: "https://androidapks.com/wp-content/uploads/2017/10/WhatsApp-Business-APK-3.png",
+              link: "https://donzee529.github.io/appstore.github.io/files/WhatsAppBusiness.apk",
+            },
+            {
+              name: "WhatsApp",
+              image: "https://github.com/AshiVered/apny/raw/main/icon/wa.png",
+              link: "https://donzee529.github.io/appstore.github.io/files/WhatsApp.apk",
+            },
+          ];
 
-<body style="text-align:center; margin:0 auto;">
+          const container = document.getElementById("app-container");
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+          apps.forEach((app) => {
+            const column = document.createElement("li");
+            column.setAttribute(
+              "style",
+              `
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      `
+            );
 
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script src="index.js"></script>
-
-</head>
-
-<body>
-  <h1 class="text-black text-2xl font-bold m-6">App Store</h1>
-  <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 m-6" id="app-container" >
-<script>
-  const apps = [
-    {
-      name: "WhatsApp Business",
-      image: "https://androidapks.com/wp-content/uploads/2017/10/WhatsApp-Business-APK-3.png",
-      link: "https://donzee529.github.io/appstore.github.io/files/WhatsAppBusiness.apk"
-    },    {
-      name: "WhatsApp",
-      image: "https://github.com/AshiVered/apny/raw/main/icon/wa.png",
-      link: "https://donzee529.github.io/appstore.github.io/files/WhatsApp.apk"
-    },
-  ];
-
-  const container = document.getElementById("app-container");
-
-  apps.forEach(app => {
-    const column = document.createElement("li");
-    column.className = "col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow-sm";
-
-    column.innerHTML = `
-     <div class="flex flex-1 flex-col p-8">
-     <img class="mx-auto w-16 h-16 shrink-0 rounded-2xl aspect-square" src="${app.image}" alt="${app.name}">
-
-      <h3 class="mt-6 text-sm font-medium text-gray-900">${app.name}</h3>
-    </div>
-    <div>
-      <div class="-mt-px flex divide-x divide-gray-200">
-        <div class="-ml-px flex w-0 flex-1">
-          <a href="${app.link}" class="relative inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-br-lg border border-transparent py-4 text-sm font-semibold text-gray-900">
+            column.innerHTML = `
+        <div style="padding: 2rem;">
+          <img src="${app.image}" alt="${app.name}" style="margin: 0 auto; width: 4rem; height: 4rem; border-radius: 1rem; object-fit: cover;" />
+          <h3 style="margin-top: 1.5rem; font-size: 0.875rem; font-weight: 500; color: #1a202c;">${app.name}</h3>
+        </div>
+        <div style="border-top: 1px solid #e5e7eb;">
+          <a href="${app.link}" style="
+            display: inline-block;
+            width: 100%;
+            padding: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1a202c;
+            text-decoration: none;
+          ">
             Install
           </a>
         </div>
-      </div>
-    </div>
-    `;
+      `;
 
-    container.appendChild(column);
-  });
-</script>
-
-</ul>
-</body>
+            container.appendChild(column);
+          });
+        </script>
+      </ul>
+    </body>
+  </html>
+</html>
