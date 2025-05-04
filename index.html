@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="iw" dir="rtl">
+<html>
+
+<head>
+
+<body style="text-align:center; margin:0 auto;">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: right;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+
+.card {
+  border-radius: 25px;
+  background: #edeaea;
+  box-shadow: 0 10px 8px 0 rgba(10, 10, 10, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.app-name {
+  color: #000;
+  font-size: 20px;
+  margin: 10px 0;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.Button {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: #00a6a2;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+}
+
+.Button:hover {
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
+}
+
+.Button:active {
+  position: relative;
+  top: 1px;
+}
+
+.imgbox {
+  display: grid;
+  height: 100%;
+}
+
+.center-fit {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: auto;
+}
+</style>
+
+</head>
+
+<body>
+  <div id="app-container" class="row" style="margin-top:30px; margin-left: 5%; margin-right: 5%;"></div>
+
+<script>
+  const apps = [
+    {
+      name: "WhatsApp Business",
+      image: "https://androidapks.com/wp-content/uploads/2017/10/WhatsApp-Business-APK-3.png",
+      link: "https://github.com/donzee529/AppStoreHTML/raw/main/files/WhatsAppBusiness.apk"
+    },    {
+      name: "WhatsApp",
+      image: "https://github.com/AshiVered/apny/raw/main/icon/wa.png",
+      link: "https://github.com/donzee529/AppStoreHTML/raw/main/files/WhatsApp.apk"
+    },
+  ];
+
+  const container = document.getElementById("app-container");
+
+  apps.forEach(app => {
+    const column = document.createElement("div");
+    column.className = "column";
+
+    column.innerHTML = `
+      <div class="card">
+        <img src="${app.image}" alt="${app.name}" style="width:100%; border-top-right-radius: 25px; border-top-left-radius: 25px;">
+        <div class="container">
+          <p class="app-name">${app.name}</p>
+          <p><a href="${app.link}" class="Button">Install</a></p>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(column);
+  });
+</script>
+
+</body>
