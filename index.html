@@ -17,16 +17,23 @@
       >
         <script>
           const apps = [
-            {
-              name: "WhatsApp Business",
-              image: "https://androidapks.com/wp-content/uploads/2017/10/WhatsApp-Business-APK-3.png",
-              link: "https://donzee529.github.io/appstore.github.io/files/WhatsAppBusiness.apk",
-            },
-            {
-              name: "WhatsApp",
-              image: "https://github.com/AshiVered/apny/raw/main/icon/wa.png",
-              link: "https://donzee529.github.io/appstore.github.io/files/WhatsApp.apk",
-            },
+            { name: "WhatsApp Business", short: "WhatsAppBusiness", image: "png" },
+            { name: "WhatsApp", short: "WhatsApp", image: "png" },
+            { name: "HebDate", short: "HebDate", image: "png" },
+            { name: "24Six", short: "24Six", image: "jpeg" },
+            { name: "Google Calendar", short: "GoogleCalendar", image: "webp" },
+            { name: "Google Contacts", short: "GoogleContacts", image: "webp" },
+            { name: "Google Phone", short: "GooglePhone", image: "webp" },
+            { name: "Google Messages", short: "GoogleMessages", image: "webp" },
+            { name: "KolHalashon Kiosk", short: "KolHalashonKiosk", image: "jpg" },
+            { name: "All Daf", short: "AllDaf", image: "webp" },
+            { name: "MyZmanim", short: "MyZmanim", image: "png" },
+            { name: "", short: "", image: "" },
+            { name: "", short: "", image: "" },
+            { name: "", short: "", image: "" },
+            { name: "", short: "", image: "" },
+            { name: "", short: "", image: "" },
+            { name: "", short: "", image: "" },
           ];
 
           const container = document.getElementById("app-container");
@@ -49,11 +56,11 @@
 
             column.innerHTML = `
         <div style="padding: 2rem;">
-          <img src="${app.image}" alt="${app.name}" style="margin: 0 auto; width: 4rem; height: 4rem; border-radius: 1rem; object-fit: cover;" />
+          <img src="https://donzee529.github.io/appstore.github.io/files/${app.short}.${app.image}" alt="${app.name}" style="margin: 0 auto; width: 4rem; height: 4rem; border-radius: 1rem; object-fit: cover;" />
           <h3 style="margin-top: 1.5rem; font-size: 0.875rem; font-weight: 500; color: #1a202c;">${app.name}</h3>
         </div>
         <div style="border-top: 1px solid #e5e7eb;">
-          <a href="${app.link}" style="
+          <a href="https://donzee529.github.io/appstore.github.io/files/${app.short}.apk" style="
             display: inline-block;
             width: 100%;
             padding: 1rem;
